@@ -41,7 +41,7 @@ def print_orders(all_orders: dict, show_user=False):
             print(all_orders[order_id][1])
 
     print("....................")
-    print(f"Total: ${sum(total):.2f}")
+    print(f"Total: ${total:.2f}")
 
 
 def convert_yes_no(inp: str):
