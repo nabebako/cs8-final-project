@@ -33,11 +33,15 @@ def print_orders(all_orders: dict, show_user=False):
         print("....................")
         print("Total: $0.00")
 
+    total = 0.0
     for order_id in all_orders:
-        print(f"Order #{order_id}, {all_orders[order_id][0]}")
+        print(f"Order #{order_id}, {all_orders[order_id][0]:.2f}")
+        total = all_orders[order_id][0]
         if show_user:
-            pass
             print(all_orders[order_id][1])
+
+    print("....................")
+    print(f"Total: ${sum(total):.2f}")
 
 
 def convert_yes_no(inp: str):
@@ -79,7 +83,7 @@ def construct_discounts_dict(keys_dict, values_list):
         res[key] = values_list[i]
         i += 1
 
-    return keys_dict
+    return res
 
 
 def compute_price_using_age(base_price, user_dict):
