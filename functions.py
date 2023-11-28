@@ -28,12 +28,11 @@ def print_orders(all_orders: dict, show_user=False):
     prices.
     """
 
+    total = 0.0
+
     if len(all_orders) == 0:
         print("WARNING: There is nothing to display!")
-        print("....................")
-        print("Total: $0.00")
 
-    total = 0.0
     for order_id in all_orders:
         print(f"Order #{order_id}, {all_orders[order_id][0]:.2f}")
         total = all_orders[order_id][0]
