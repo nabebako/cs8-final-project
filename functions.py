@@ -35,7 +35,7 @@ def print_orders(all_orders: dict, show_user=False):
 
     for order_id in all_orders:
         print(f"Order #{order_id}, ${all_orders[order_id][0]:.2f}")
-        total = all_orders[order_id][0]
+        total += all_orders[order_id][0]
         if show_user:
             print(all_orders[order_id][1])
 
