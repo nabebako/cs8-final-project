@@ -28,7 +28,6 @@ def print_orders(all_orders: dict, show_user=False):
     prices.
     """
 
-    print(all_orders)
     if len(all_orders) == 0:
         print("WARNING: There is nothing to display!")
         print("....................")
@@ -41,13 +40,13 @@ def print_orders(all_orders: dict, show_user=False):
             print(all_orders[order_id][1])
 
 
-def convert_yes_no(inp):
+def convert_yes_no(inp: str):
     """
     If the input is "yes" or "y", return `True`;
     otherwise, return `False`.
     """
 
-    return inp.capitalize() == "Y" or inp.capitalize() == "YES"
+    return inp.upper() == "Y" or inp.upper() == "YES"
 
 
 def construct_discounts_dict(keys_dict, values_list):
@@ -70,12 +69,14 @@ def construct_discounts_dict(keys_dict, values_list):
     the function returns
     {'Student': True, 'Military': False}
     """
+
     if len(keys_dict) != len(values_list):
         return -1
 
+    res = {}
     i = 0
     for key in keys_dict:
-        keys_dict[key] = values_list[i]
+        res[key] = values_list[i]
         i += 1
 
     return keys_dict
